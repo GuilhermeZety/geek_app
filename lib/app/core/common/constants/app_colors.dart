@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color get background => grey_50;
-  static Color primary = Colors.red;
+  static Color get background => blue_800;
+  static Color primary = blue_300;
 
   static const Color white = Color(0xFFFFFFFF);
   static const Color grey_50 = Color(0xFFF9FAFB);
@@ -17,15 +17,15 @@ class AppColors {
   static const Color grey_900 = Color(0xFF111827);
   static const Color grey_950 = Color(0xFF030712);
 
+  static const Color blue_300 = Color(0xFF32C3F7);
+  static const Color blue_600 = Color(0xFF1C70EA);
+  static const Color purple_500 = Color(0xFF725EDF);
+  static const Color blue_800 = Color(0xFF131323);
+
   static const Color black = Color(0xFF020912);
 
   static const Color info = Color(0xFF0079BC);
   static const Color success = Color(0xFF34E46F);
   static const Color warning = Color(0xFFF0B200);
   static const Color error = Color(0xFFD22121);
-
-  static const Color bronze = Color(0xFF9A4227);
-  static const Color prata = Color(0xFFCFCFCF);
-  static const Color ouro = Color(0xFFffd700);
-  static const Color diamante = Color(0xFF65E5ED);
 }

@@ -4,13 +4,13 @@ import 'package:geek_app/app/core/common/extensions/color_extension.dart';
 
 /// > A class that contains all the colors used in the app
 class AppTheme {
-  static ThemeData get light => ThemeData(
+  static ThemeData get dark => ThemeData(
         fontFamily: 'Roboto',
         primarySwatch: AppColors.primary.toMaterialColor(),
         textSelectionTheme: TextSelectionThemeData(
-          selectionHandleColor: const Color(0xFFAB111A),
-          cursorColor: const Color(0xFFAB111A),
-          selectionColor: const Color(0xFFAB111A).withOpacity(0.2),
+          selectionHandleColor: AppColors.primary,
+          cursorColor: AppColors.primary,
+          selectionColor: AppColors.primary.withOpacity(0.2),
         ),
         textTheme: const TextTheme(
           displayLarge: TextStyle(color: AppColors.grey_600, letterSpacing: 0.4),
@@ -19,9 +19,9 @@ class AppTheme {
           titleMedium: TextStyle(color: AppColors.grey_600, letterSpacing: 0.4),
         ),
       ).copyWith(
-        scaffoldBackgroundColor: AppColors.grey_200,
-        canvasColor: AppColors.grey_300,
-        primaryColor: AppColors.grey_300,
+        scaffoldBackgroundColor: AppColors.background,
+        canvasColor: AppColors.primary,
+        primaryColor: AppColors.primary,
         colorScheme: const ColorScheme.light().copyWith(
           primary: AppColors.primary,
           primaryContainer: Colors.white,

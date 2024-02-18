@@ -4,6 +4,7 @@ import 'package:geek_app/app/core/common/services/connection/connection_checker_
 import 'package:geek_app/app/core/common/services/connection/connection_service.dart';
 import 'package:geek_app/app/core/common/services/requests/dio_request_service.dart';
 import 'package:geek_app/app/core/common/services/requests/request_service.dart';
+import 'package:geek_app/app/modules/auth/auth_module.dart';
 import 'package:geek_app/app/modules/splash/presentation/pages/splash_page.dart';
 
 class AppModule extends Module {
@@ -22,12 +23,12 @@ class AppModule extends Module {
     //   transition: TransitionType.fadeIn,
     //   duration: 500.ms,
     // );
-    // r.module(
-    //   '/auth/',
-    //   module: AuthModule(),
-    //   transition: TransitionType.fadeIn,
-    //   duration: 500.ms,
-    // );
+    r.module(
+      '/auth/',
+      module: AuthModule(),
+      transition: TransitionType.fadeIn,
+      duration: 2000.ms,
+    );
     //CHILDS
     r.child(
       '/',

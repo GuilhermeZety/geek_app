@@ -23,3 +23,9 @@ class HomeRoutes {
 
   String index(int? initialIndex) => '$_path/${initialIndex ?? 'null'}';
 }
+
+class AuthRoutes {
+  static const String _path = '/auth';
+
+  String get login => '$_path/login/';
+}

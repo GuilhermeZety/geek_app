@@ -36,8 +36,8 @@ class _AppWidgetState extends State<AppWidget> {
       supportedLocales: const [
         Locale('pt'),
       ],
-      theme: AppTheme.light,
-      themeMode: ThemeMode.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       routerDelegate: Modular.routerDelegate,
       routeInformationParser: Modular.routeInformationParser,

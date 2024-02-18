@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   SplashService service = SplashService();
   @override
   void initState() {
-    service.navigate();
+    service.navigate(context);
     super.initState();
   }
 
@@ -30,28 +30,21 @@ class _SplashPageState extends State<SplashPage> {
         body: Stack(
           children: [
             ImageFiltered(
-              imageFilter: ImageFilter.blur(sigmaY: 6, sigmaX: 6),
+              imageFilter: ImageFilter.blur(sigmaY: 6, sigmaX: 10),
               child: Image.asset(
                 AppAssets.images.background,
                 width: context.width,
                 fit: BoxFit.cover,
-                alignment: Alignment.centerRight,
                 height: context.height,
               ),
-            ),
+            ).hero('background'),
             Center(
               child: SizedBox(
                 child: Image.asset(
                   AppAssets.images.logo,
                   width: 147,
-                )
-                    .hero('logo')
-                    .animate(
-                      onComplete: (_) => _.repeat(reverse: true),
-                      delay: 2.seconds,
-                    )
-                    .scaleXY(duration: 1500.ms, begin: 1, end: 1.1),
-              ),
+                ).hero('logo'),
+              ).animate().fade(),
             ),
           ],
         ),
