@@ -78,16 +78,17 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(
-          maxWidth: 300,
+          maxWidth: 330,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (type == LayoutTypes.desktop)
+            if (type == LayoutTypes.desktop) ...[
               Image.asset(
                 AppAssets.images.logo,
                 width: 130,
               ).hero('logo').pBottom(74),
+            ],
             const Text(
               'Acesse com alguma plataforma para uma experiência completa',
               style: TextStyle(
@@ -118,7 +119,7 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
             ),
           ],
         ),
-      ).p(24),
+      ).pBottom(24),
     );
   }
 
@@ -139,7 +140,7 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
                 child: Image.asset(
                   AppAssets.images.background,
                   width: type == LayoutTypes.desktop ? context.width * 0.6 : context.width,
-                  height: type == LayoutTypes.desktop ? context.height : context.height * 0.5,
+                  height: type == LayoutTypes.desktop ? context.height : context.height * 0.45,
                   fit: BoxFit.cover,
                 ),
                 // .animate().blurXY(begin: 2, end: 0, duration: 1000.ms),
@@ -174,7 +175,7 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
                           height: switch (type) {
                             (LayoutTypes.desktop || LayoutTypes.largeDesktop) => context.height * 0.9 > ccc.maxHeight ? ccc.maxHeight : context.height * 0.9,
                             (LayoutTypes.tablet) => context.height * 0.4,
-                            (LayoutTypes.mobile) => context.height * 0.3,
+                            (LayoutTypes.mobile) => context.height * 0.32,
                           },
                         ).animate().fade(delay: 300.ms).scaleXY(begin: 0.9, end: 1, duration: 500.ms, alignment: Alignment.bottomCenter),
                       ],
@@ -194,7 +195,7 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
               'Desfrute do melhor conteúdo\nem qualquer lugar.',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: type == LayoutTypes.desktop ? 14 : 12,
+                fontSize: type == LayoutTypes.desktop ? 14 : 9,
                 foreground: Paint()
                   ..style = PaintingStyle.stroke
                   ..strokeWidth = 2
@@ -204,7 +205,7 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
             Text(
               'Desfrute do melhor conteúdo\nem qualquer lugar.',
               style: TextStyle(
-                fontSize: type == LayoutTypes.desktop ? 14 : 12,
+                fontSize: type == LayoutTypes.desktop ? 14 : 9,
                 color: AppColors.black,
                 fontWeight: FontWeight.bold,
               ),
