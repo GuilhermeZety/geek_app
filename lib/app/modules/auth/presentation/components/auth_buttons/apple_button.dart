@@ -5,7 +5,12 @@ import 'package:geek_app/app/core/common/constants/app_assets.dart';
 import 'package:geek_app/app/core/common/constants/app_colors.dart';
 
 class AppleButton extends StatelessWidget {
-  const AppleButton({super.key});
+  const AppleButton({
+    super.key,
+    this.disabled = false,
+  });
+
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {

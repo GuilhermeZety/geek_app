@@ -80,44 +80,46 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
         constraints: const BoxConstraints(
           maxWidth: 330,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (type == LayoutTypes.desktop) ...[
-              Image.asset(
-                AppAssets.images.logo,
-                width: 130,
-              ).hero('logo').pBottom(74),
-            ],
-            const Text(
-              'Acesse com alguma plataforma para uma experiência completa',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: AppColors.grey_500,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const Gap(24),
-            SeparatedColumn(
-              separatorBuilder: () => const Gap(12),
-              children: [
-                const GoogleButton().expandedH(),
-                const DiscordButton().expandedH(),
-                const AppleButton().expandedH(),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (type == LayoutTypes.desktop) ...[
+                Image.asset(
+                  AppAssets.images.logo,
+                  width: 130,
+                ).hero('logo').pBottom(74),
               ],
-            ),
-            const Gap(12),
-            const Text('ou'),
-            const Gap(12),
-            Button(
-              onPressed: () async {
-                //
-              },
-              color: AppColors.grey_800,
-              child: const Text('Entrar como convidado'),
-            ),
-          ],
+              const Text(
+                'Acesse com alguma plataforma para uma experiência completa',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.grey_500,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const Gap(24),
+              SeparatedColumn(
+                separatorBuilder: () => const Gap(12),
+                children: [
+                  const GoogleButton().expandedH(),
+                  const DiscordButton().expandedH(),
+                  const AppleButton().expandedH(),
+                ],
+              ),
+              const Gap(12),
+              const Text('ou'),
+              const Gap(12),
+              Button(
+                onPressed: () async {
+                  //
+                },
+                color: AppColors.grey_800,
+                child: const Text('Entrar como convidado'),
+              ),
+            ],
+          ),
         ),
       ).pBottom(24),
     );
@@ -143,7 +145,6 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
                   height: type == LayoutTypes.desktop ? context.height : context.height * 0.45,
                   fit: BoxFit.cover,
                 ),
-                // .animate().blurXY(begin: 2, end: 0, duration: 1000.ms),
               ).hero('background'),
             ),
             Positioned(
